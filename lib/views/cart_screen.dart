@@ -24,9 +24,13 @@ class _CartScreenState extends State<CartScreen> {
         .toList();
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade900,
 
-      appBar: AppBar(title: const Text("Cart"), backgroundColor: Colors.white),
+      appBar: AppBar(
+        title: Text("Cart", style: TextStyle(color: Colors.grey.shade300)),
+        backgroundColor: Colors.grey.shade900,
+        iconTheme: IconThemeData(color: Colors.grey.shade300),
+      ),
 
       body: SafeArea(
         child: Stack(
@@ -38,15 +42,18 @@ class _CartScreenState extends State<CartScreen> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.shopping_bag_outlined,
                             size: 64,
-                            color: Colors.grey,
+                            color: Colors.grey.shade400,
                           ),
                           const SizedBox(height: 12),
-                          const Text(
+                          Text(
                             "Your cart is empty",
-                            style: TextStyle(fontSize: 16, color: Colors.grey),
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey.shade400,
+                            ),
                           ),
                         ],
                       ),
@@ -79,15 +86,15 @@ class _CartScreenState extends State<CartScreen> {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
+                  backgroundColor: Colors.grey.shade300,
                   minimumSize: const Size(double.infinity, 55),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(35),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   "Checkout",
-                  style: TextStyle(fontSize: 26, color: Colors.white),
+                  style: TextStyle(fontSize: 26, color: Colors.grey.shade900),
                 ),
               ),
             ),

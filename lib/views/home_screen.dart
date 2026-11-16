@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade900,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -61,7 +61,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     "Discover",
-                    style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 34,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey.shade300,
+                    ),
                   ),
                   IconButton(
                     onPressed: () {
@@ -76,7 +80,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     },
                     iconSize: 42,
-                    icon: Icon(Icons.shopping_bag_outlined),
+                    icon: Icon(
+                      Icons.shopping_bag_outlined,
+                      color: Colors.grey.shade300,
+                    ),
                   ),
                 ],
               ),
@@ -85,22 +92,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
               Text(
                 "Explore the world with us",
-                style: TextStyle(fontSize: 16, color: Colors.grey),
+                style: TextStyle(fontSize: 16, color: Colors.grey.shade400),
               ),
 
               SizedBox(height: 14),
 
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFFF5F5F7),
-                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.grey.shade800,
+                  borderRadius: BorderRadius.circular(35),
                 ),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search",
-                    prefixIcon: Icon(Icons.search, color: Colors.grey),
+                    prefixIcon: Icon(Icons.search, color: Colors.grey.shade400),
                     border: InputBorder.none,
-                    hintStyle: TextStyle(color: Colors.grey),
+                    hintStyle: TextStyle(color: Colors.grey.shade400),
                     contentPadding: EdgeInsets.symmetric(vertical: 14),
                   ),
                 ),
@@ -108,12 +115,14 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 16),
 
               ClipRRect(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(20),
                 child: Image.network(
                   "https://wantapi.com/assets/banner.png",
                   height: 80,
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
+                  color: Colors.black.withValues(alpha: 0.5),
+                  colorBlendMode: BlendMode.darken,
                 ),
               ),
               SizedBox(height: 16),

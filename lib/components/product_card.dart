@@ -3,14 +3,14 @@ import 'package:week_3_mobile/models/products_model.dart';
 
 class ProductCard extends StatelessWidget {
   final Data findProduct;
-  const new({super.key, required this.findProduct});
+  const ProductCard({super.key, required this.findProduct});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        color: Colors.grey.shade800,
+        borderRadius: BorderRadius.circular(35),
         boxShadow: [
           BoxShadow(
             color: Colors.black26,
@@ -24,7 +24,7 @@ class ProductCard extends StatelessWidget {
         children: [
           Expanded(
             child: ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(35)),
               child: Image.network(
                 findProduct.image!,
                 width: double.infinity,
@@ -39,21 +39,31 @@ class ProductCard extends StatelessWidget {
               children: [
                 Text(
                   findProduct.name!,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey.shade300,
+                  ),
                 ),
                 SizedBox(height: 2),
                 Text(
                   findProduct.tagline!,
                   style: TextStyle(
                     fontSize: 12,
-                    color: Colors.grey.shade600,
+                    color: Colors.grey.shade400,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 67),
+            child: Column(
+              children: [
                 Text(
                   findProduct.price!,
                   style: TextStyle(
-                    color: Colors.blue.shade700,
+                    color: Colors.green.shade400,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

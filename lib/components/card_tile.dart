@@ -26,7 +26,7 @@ class MiniCardTile extends StatelessWidget {
             height: 70,
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: const Color(0xFFF5F5F7),
+              color: Colors.grey.shade800,
               borderRadius: BorderRadius.circular(8),
               image: imageUrl.isNotEmpty
                   ? DecorationImage(
@@ -36,7 +36,7 @@ class MiniCardTile extends StatelessWidget {
                   : null,
             ),
             child: imageUrl.isEmpty
-                ? const Icon(Icons.image, color: Colors.grey)
+                ? Icon(Icons.image, color: Colors.grey.shade400)
                 : null,
           ),
           const SizedBox(width: 16),
@@ -48,31 +48,32 @@ class MiniCardTile extends StatelessWidget {
                   name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
+                    color: Colors.grey.shade300,
                   ),
                 ),
                 Text(
                   tagline,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
                     fontStyle: FontStyle.italic,
-                    color: Colors.grey,
+                    color: Colors.grey.shade400,
                   ),
                 ),
                 Text(
                   price,
-                  style: TextStyle(color: Colors.grey.shade700, fontSize: 14),
+                  style: TextStyle(color: Colors.green.shade400, fontSize: 14),
                 ),
               ],
             ),
           ),
           IconButton(
             icon: const Icon(Icons.remove_circle_outline),
-            color: Colors.grey,
+            color: Colors.red,
             onPressed: onRemove,
           ),
         ],
